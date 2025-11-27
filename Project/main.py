@@ -13,15 +13,15 @@ if __name__ == '__main__':
     n=1000000000
 
     start = time.time()
-    #mciseqcpu.monte_carlo_integration(f,a,b,n)
+    mciseqcpu.monte_carlo_integration(f,a,b,n)
     time_seq = time.time() - start
 
     start = time.time()
-    #mciparcpu.monte_carlo_integration(f,a,b,n)
+    mciparcpu.monte_carlo_integration(f,a,b,n)
     time_par = time.time() - start
 
     start = time.time()
-    #mciparcpu.monte_carlo_integration_multiprocess(f,a,b,n)
+    mciparcpu.monte_carlo_integration_multiprocess(f,a,b,n)
     time_mpi = time.time() - start
 
     start = time.time()
@@ -33,9 +33,9 @@ if __name__ == '__main__':
     time_gpu_kernel = time.time() - start
 
     print("N: ", n, "\n")
-    #print("Time sequential: ", time_seq)
-    #print("Time parallel (threads): ", time_par)
-    #print("Time parallel (multiprocessing): ", time_mpi)
+    print("Time sequential: ", time_seq)
+    print("Time parallel (threads): ", time_par)
+    print("Time parallel (multiprocessing): ", time_mpi)
     print("Time GPU (CUDA):", time_gpu, "Result:" , result1)
     print("Time GPU (with kernel):", time_gpu_kernel, "Result:" , result2)
 
